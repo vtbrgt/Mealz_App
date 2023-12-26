@@ -1,12 +1,16 @@
-package br.com.mealzapp.ui.mealz
+package br.com.mealzapp.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import br.com.mealzapp.ui.mealz.MealsCategoriesScreen
+import br.com.mealzapp.ui.mealz.MealzCategoriesViewModel
 import br.com.mealzapp.ui.theme.MealzAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,13 +22,6 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-}
-
-@Composable
-fun MealsCategoriesScreen() {
-    val viewModel: MealzCategoriesViewModel = viewModel()
-    val meals = viewModel.getMeals()
-    Text("Hello Compose!")
 }
 
 @Preview(showBackground = true)
