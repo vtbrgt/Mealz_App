@@ -1,18 +1,14 @@
-package br.com.mealzapp.ui.mealz
+package br.com.mealzapp.ui.meals
 
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.mealzapp.model.MealzRepository
 import br.com.mealzapp.model.response.MealResponse
-import br.com.mealzapp.model.response.MealsCategoriesResponse
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class MealzCategoriesViewModel (private val repository: MealzRepository = MealzRepository()): ViewModel() {
+class MealzCategoriesViewModel (private val repository: MealzRepository = MealzRepository.getInstance()): ViewModel() {
     val mealsState = mutableStateOf(emptyList<MealResponse>())
 
     init {
